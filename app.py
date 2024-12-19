@@ -38,4 +38,4 @@ def delete_bird(id):
   return str(y.deleted_count)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debut=True)
