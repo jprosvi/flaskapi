@@ -4,7 +4,7 @@ from pymongo import MongoClient
 import json
 
 
-MONGODB_URI = "mongodb://devops:redpanda@127.0.0.1"
+MONGODB_URI = "mongodb://devops:redpanda@mongo"
 
 client = MongoClient(MONGODB_URI)
 
