@@ -2,6 +2,7 @@ from flask import Flask
 from bson import json_util, ObjectId
 from pymongo import MongoClient
 import json
+import socket
 
 
 MONGODB_URI = "mongodb://devops:redpanda@mongo"
@@ -12,6 +13,14 @@ db = client.mydata
 coll = db.data
 app = Flask(__name__)
 
+
+@app.route('/')
+def indext():
+  hostname = socket.gethostname()
+  IPAddr = socket.gethostbyname(hostname)
+  print("Your Computer Name is:" + hostname)
+  print("Your Computer IP Address is:" + IPAddr)
+  return str(IPAddr)
 
 @app.route('/add/<species>/<bird>')
 def add(species, bird):
